@@ -1,11 +1,5 @@
-from fastapi import FastAPI
+# Разработчик #1 @aleksrf1 aleksrf@gmail.com - Загрузка и настройка модели
 
-app = FastAPI()
-
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+from fastapi import FastAPI # импортируем класс `FastAPI` из модуля `fastapi`
+from transformers import AutoTokenizer, AutoModelForSequenceClassification # импортируем классы `AutoTokenizer` и `AutoModelForSequenceClassification` из модуля `transformers`
+import torch # импортируем модуль `torch`
