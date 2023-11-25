@@ -2,8 +2,8 @@
 
 import requests # импортируем модуль `requests`, который предоставляет функции для отправки HTTP-запросов
 
-url = "http://localhost:8080/predict" # создаем переменную `url` и присваивам ей значение `"http://localhost:8080/predict"`
 text = "Я очень удивлен происходящим!"  # создаем переменную `text` и присваивает ей значение `"Я очень удивлен происходящим!"`
+url = "http://127.0.0.1:8000/predict?text=" + text # создаем переменную `url` и присваивам ей значение `"http://localhost:8080/predict"`
 
 payload = {"text": text} # создаем словарь `payload` с ключом `"text"` и значением `text`. Словарь `payload` будет преобразован в JSON-формат и передан в качестве тела запроса
 response = requests.post(url, json=payload) # строка отправляет POST-запрос на указанный URL `url` с использованием модуля `requests`
