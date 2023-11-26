@@ -46,8 +46,8 @@ curl -X POST http://localhost:8080/predict -H "Content-Type: application/json" -
 ```python
 import requests
 
-url = "http://localhost:8080/predict"
 text = "Я очень удивлен происходящим!"
+url = "http://127.0.0.1:8000/predict?text=" + text
 payload = {"text": text}
 
 response = requests.post(url, json=payload)
