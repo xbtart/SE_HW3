@@ -23,7 +23,7 @@ tokenizer = AutoTokenizer.from_pretrained("cointegrated/rubert-tiny2-cedr-emotio
 # что следующая функция будет обрабатывать POST-запросы на маршрут "/predict"
 @app.post("/predict")
 def predict(text: str):  # объявляем функцию `predict`, которая принимает один аргумент `text` типа `str`
-    # используем токенизатор `tokenizer` для токенизации текста `text` с помощью метода `tokenizer` 
+    # используем токенизатор `tokenizer` для токенизации текста `text` с помощью метода `tokenizer`
     # и преобразуем его в тензор PyTorch
     inputs = tokenizer(text, return_tensors="pt")
     # строка передает входной тензор `inputs` в модель `model` и получает выходной тензор `outputs`
